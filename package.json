@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@apollo/react-hooks": "^4.0.0",
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.56",
+    "@material-ui/styles": "^4.10.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -10,17 +15,27 @@
     "@types/node": "^12.12.67",
     "@types/react": "^16.9.51",
     "@types/react-dom": "^16.9.8",
+    "apollo-boost": "^0.4.9",
+    "apollo-link-http": "^1.5.17",
+    "faker": "^5.1.0",
+    "graphql": "^15.3.0",
+    "graphql-tag": "^2.11.0",
     "react": "^16.13.1",
+    "react-apollo": "^3.1.5",
     "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "typescript": "^3.7.5"
   },
   "scripts": {
+    "json-server": "json-server --watch mock-api/db.json --port 5000",
+    "dev": "concurrently \"npm start\" \"npm run json-server\"",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "http://localhost:5000/",
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -35,5 +50,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "json-server": "^0.16.2"
   }
 }
